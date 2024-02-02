@@ -1,0 +1,36 @@
+.container {
+    border: 2px solid black;
+    width: 60%;
+    margin: 12px auto;
+    border-radius: 23px;
+    background-color: rgba(0, 0, 0, 0.836);
+    color: white;
+    padding: 6px;
+}
+
+.todoform {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 6px;
+}
+
+.todoinput,
+.submitbtn {
+    height: 30px;
+    font-size: 18px;
+    border-radius: 6px;
+    margin: 7px;
+}
+
+.submitbtn {
+    color: rgb(255, 255, 255);
+    background: rgb(87, 90, 255);
+    border-color: transparent;
+
+}
+
+label {
+    font-size: 23px;
+    margin: auto;
+}

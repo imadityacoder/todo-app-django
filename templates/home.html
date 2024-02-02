@@ -1,2 +1,17 @@
 {% extends "main.html" %}
-{% block body %}home {% endblock body %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock head %}
+{% block body %}
+<div class="container">
+  <form class="todoform" action="/" method="POST">
+    {% csrf_token %}
+    <label for="todotitle">Add new a Todo now</label>
+    <input type="text" name="todotitle" id="todotitle" class="todoinput"/>
+    <input type="text" name="tododesc" id="tododesc" class="todoinput"/>
+    <button type="submit" class="submitbtn">Add</button>
+  </form>
+</div>
+
+{% endblock body %}
