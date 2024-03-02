@@ -1,17 +1,51 @@
-{% extends "main.html" %}
-{% load static %}
-{% block head %}
+{% extends "main.html" %} {% load static %} {% block head %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}" />
-{% endblock head %}
-{% block body %}
+{% endblock head %} {% block body %}
 <div class="container">
   <form class="todoform" action="/" method="POST">
     {% csrf_token %}
     <label for="todotitle">Add new a Todo now</label>
-    <input type="text" name="todotitle" id="todotitle" class="todoinput"/>
-    <input type="text" name="tododesc" id="tododesc" class="todoinput"/>
+    <input
+      type="text"
+      name="todotitle"
+      id="todotitle"
+      class="todoinput"
+      placeholder="Title"
+    />
+    <input
+      type="text"
+      name="tododesc"
+      id="tododesc"
+      class="todoinput"
+      placeholder="Description"
+    />
     <button type="submit" class="submitbtn">Add</button>
   </form>
 </div>
+{% if todoget %}
+<table class="table">
+  <tr class="todohead">
+    <th>s.no</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Date</th>
+  </tr>
 
-{% endblock body %}
+  {% for todo in todoget %}
+  <tr class="todobox">
+    <td>{{forloop.counter}}</td>
+    <td>{{todo.title}}</td>
+    <td>{{todo.desc}}</td>
+    <td>{{todo.date}}</td>
+    <td>
+      <form action = '{% url "delete" todo.id%}'
+        ><input class="crud deletebtn" type="submit" value="delete"
+      /></form>
+      <form action='{% url "update" todo.id %}'
+        ><input class="crud updatebtn" type="submit" value="update"
+      /></form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %} {% endblock body %}

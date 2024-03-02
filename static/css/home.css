@@ -4,8 +4,8 @@
     margin: 12px auto;
     border-radius: 23px;
     background-color: rgba(0, 0, 0, 0.836);
-    color: white;
     padding: 6px;
+    color: #ffffff;
 }
 
 .todoform {
@@ -17,20 +17,40 @@
 
 .todoinput,
 .submitbtn {
-    height: 30px;
+    height: 32px;
     font-size: 18px;
     border-radius: 6px;
     margin: 7px;
-}
-
-.submitbtn {
-    color: rgb(255, 255, 255);
-    background: rgb(87, 90, 255);
     border-color: transparent;
+}
+.submitbtn,.crud{
+
+    background: rgb(87, 90, 255);
+    color: #ffffff;
+    
 
 }
 
 label {
     font-size: 23px;
     margin: auto;
+}
+
+table{
+    margin: auto;
+}
+
+.todohead{
+    
+    background-color: rgba(0, 0, 0, 0.89);
+    font-size: 21px;
+    color: #ffffff;
+}
+.crud{
+    font-size: 18px;
+    padding: 2px;
+    border-radius: 8px;
+}
+.deletebtn{
+    background-color: rgba(218, 1, 1, 0.87);
 }

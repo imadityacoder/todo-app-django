@@ -1,18 +1,37 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from .models import Todo
+from datetime import datetime
+
 
 # Create your views here.
 def home(request):
-    return render(request,"home.html")
+    if request.method == "POST":
+        todotitle=request.POST.get("todotitle")
+        tododesc=request.POST.get("tododesc")
+        if todotitle == '' or tododesc == "":
+            pass
+        else:
+            todo = Todo(title=todotitle,desc=tododesc,date=datetime.now())
+            todo.save()
+    
+    todoget = Todo.objects.all()
+    data = {'todoget':todoget}
 
-def about(request):
-    return render(request,"about.html")
+    return render(request,"home.html",data)
 
-def login(request):
-    return render(request,"about.html")
+def delete(request,id):
+    todo = Todo.objects.get(id = id)
+    todo.delete()
+    return redirect('home')
 
-def logout(request):
-    return render(request,"about.html")
+def update(request,id):
+    t_update = request.POST.get('title')
+    d_update = request.POST.get('desc')
+    todo = Todo.objects.get(id = id)
+  
+    data = {"get": todo}
 
-def signup(request):
-    return render(request,"about.html")
+    return render(request,"update.html",data)
+
+
  
