@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect
 from .models import Todo
-from datetime import datetime
+
+
+
 
 
 # Create your views here.
@@ -11,7 +13,7 @@ def home(request):
         if todotitle == '' or tododesc == "":
             pass
         else:
-            todo = Todo(title=todotitle,desc=tododesc,date=datetime.now())
+            todo = Todo(title=todotitle,desc=tododesc)
             todo.save()
     
     todoget = Todo.objects.all()
@@ -24,14 +26,8 @@ def delete(request,id):
     todo.delete()
     return redirect('home')
 
-def update(request,id):
-    t_update = request.POST.get('title')
-    d_update = request.POST.get('desc')
-    todo = Todo.objects.get(id = id)
   
-    data = {"get": todo}
 
-    return render(request,"update.html",data)
 
 
  

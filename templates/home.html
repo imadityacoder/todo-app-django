@@ -41,9 +41,6 @@
       <form action = '{% url "delete" todo.id%}'
         ><input class="crud deletebtn" type="submit" value="delete"
       /></form>
-      <form action='{% url "update" todo.id %}'
-        ><input class="crud updatebtn" type="submit" value="update"
-      /></form>
     </td>
   </tr>
   {% endfor %}

@@ -1,10 +1,10 @@
 .container {
     border: 2px solid black;
-    width: 60%;
-    margin: 12px auto;
+    width: 80%;
+    margin: 10px auto;
     border-radius: 23px;
     background-color: rgba(0, 0, 0, 0.836);
-    padding: 6px;
+    padding: 4px;
     color: #ffffff;
 }
 
@@ -43,14 +43,14 @@ table{
 .todohead{
     
     background-color: rgba(0, 0, 0, 0.89);
-    font-size: 21px;
+    font-size: 18px;
     color: #ffffff;
 }
 .crud{
-    font-size: 18px;
+    font-size: 16px;
     padding: 2px;
     border-radius: 8px;
 }
 .deletebtn{
-    background-color: rgba(218, 1, 1, 0.87);
+    background-color: rgba(202, 38, 38, 0.87);
 }
